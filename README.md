@@ -6,6 +6,22 @@ Prédiction des ventes
 
 (feature categorique et feature numérique)
 
+## Function :
+
+### load_data observation
+
+#### Test
+
+Size: (5681 rows * 11 columns)
+Has missing data (976 for Item_weight, 1606 for Outlet_Size)
+
+#### Train
+
+Size: (8523 rows * 12 columns)
+Has missing data (1463 for Item_weight, 2410 for Outlet_Size)
+
+
+
 ## workflows
 
 ### semantic-version
