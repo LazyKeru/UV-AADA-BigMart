@@ -13,6 +13,7 @@ from sklearn.tree import DecisionTreeRegressor
 from xgboost import XGBRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import Ridge
+from .analyse import analyse
 
 default_names = [
     #"LogisticRegression", # Neural network models
@@ -138,4 +139,5 @@ def regression_selection(df, target, names=default_names,classifiers=default_cla
         pass
     pass
     """
+    analyse(regs, x_test, y_test)
     return regs

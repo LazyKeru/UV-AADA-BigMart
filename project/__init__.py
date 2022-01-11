@@ -11,4 +11,3 @@ from .df_preprocessing_num_features import df_preprocessing_num_features
 from .df_uniform_categorical import df_uniform_categorical
 from .randomForestRegressor_reg1 import randomForestRegressor_reg1
 from .regression_selection import regression_selection
-from .analyse import analyse
