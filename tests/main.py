@@ -27,6 +27,7 @@ def test_feature_extraction():
     #test=proj.transform_categorical_numerical(test,'Item_Identifier','Item_Outlet_Sales')
     categorical_df, numerical_df = proj.split_categorical_numerical(train, target)
     proj.explore_numerical_features(train, numerical_df, target)
+    proj.explore_categorical_features(train, categorical_df, target)
     pass
 
 
