@@ -6,6 +6,8 @@ Prédiction des ventes
 
 (feature categorique et feature numérique)
 
+qu'est ce r2
+
 ## Function :
 
 ### load_data observation

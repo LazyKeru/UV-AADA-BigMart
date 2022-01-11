@@ -25,9 +25,10 @@ def test_feature_extraction():
     #train=proj.transform_categorical_numerical(train,'Item_Identifier','Item_Outlet_Sales')
     #print("transform categorical to numercial for test")
     #test=proj.transform_categorical_numerical(test,'Item_Identifier','Item_Outlet_Sales')
-    categorical_df, numerical_df = proj.split_categorical_numerical(train, target)
-    proj.explore_numerical_features(train, numerical_df, target)
-    proj.explore_categorical_features(train, categorical_df, target)
+    categorical_f, numerical_f = proj.split_categorical_numerical(train, target)
+    #proj.explore_numerical_features(train, numerical_f, target)
+    #proj.explore_categorical_features(train, categorical_f, target)
+    train = proj.df_preprocessing_num_features(train, numerical_f)
     pass
 
 

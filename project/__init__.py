@@ -6,3 +6,4 @@ from .transform_categorical_numerical import transform_categorical_numerical
 from .split_categorical_numerical import split_categorical_numerical
 from .explore_numerical_features import explore_numerical_features
 from .explore_categorical_features import explore_categorical_features
+from .df_preprocessing_num_features import df_preprocessing_num_features
