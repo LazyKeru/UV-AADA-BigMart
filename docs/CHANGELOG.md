@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/LazyKeru/UV-AADA-BigMart/compare/v1.2.1...v1.3.0) (2022-01-11)
+
+
+### Features
+
+* split analyse and regression selection ([74cea7e](https://github.com/LazyKeru/UV-AADA-BigMart/commit/74cea7e03e859ae433ef22f3320f5936e1720577))
+
 ## [1.2.1](https://github.com/LazyKeru/UV-AADA-BigMart/compare/v1.2.0...v1.2.1) (2022-01-11)
 
 
