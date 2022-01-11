@@ -20,6 +20,8 @@ def test_feature_extraction():
     test, train = test_load_data()
     print("feature search for train")
     proj.feature_search(train)
+    # 'Item_Fat_Content' has multiple tags for the same category
+    train = proj.df_uniform_categorical(train,'Item_Fat_Content',{'low fat':'Low Fat','LF':'Low Fat','reg':'Regular'})
     ## Local var
     #print("transform categorical to numercial for train")
     #train=proj.transform_categorical_numerical(train,'Item_Identifier','Item_Outlet_Sales')
