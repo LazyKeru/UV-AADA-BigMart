@@ -22,6 +22,7 @@ def test_feature_extraction():
     proj.feature_search(train)
     # 'Item_Fat_Content' has multiple tags for the same category
     train = proj.df_uniform_categorical(train,'Item_Fat_Content',{'low fat':'Low Fat','LF':'Low Fat','reg':'Regular'})
+    print(f"head: {train.head()}")
     ## Local var
     #print("transform categorical to numercial for train")
     #train=proj.transform_categorical_numerical(train,'Item_Identifier','Item_Outlet_Sales')
@@ -31,6 +32,9 @@ def test_feature_extraction():
     #proj.explore_numerical_features(train, numerical_f, target)
     #proj.explore_categorical_features(train, categorical_f, target)
     train = proj.df_preprocessing_num_features(train, numerical_f)
+    print(f"head: {train.head()}")
+    train = proj.transform_categorical_numerical(train, categorical_f)
+    print(f"head: {train.head()}")
     pass
 
 
