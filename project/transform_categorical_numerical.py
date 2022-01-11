@@ -28,3 +28,8 @@ def transform_categorical_numerical(df,id,target):
             """
         pass
     return df
+
+## comments from the professor
+## Could give a bigger weight with the numbers
+## from sklearn.preprocessing import LabelEncoder
+## get_dummies()

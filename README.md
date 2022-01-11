@@ -20,7 +20,15 @@ Has missing data (976 for Item_weight, 1606 for Outlet_Size)
 Size: (8523 rows * 12 columns)
 Has missing data (1463 for Item_weight, 2410 for Outlet_Size)
 
+### feature_search observation
 
+#### Test
+
+#### Train
+- Item_Identifier has 1559 unique value : ['FDA15' 'DRC01' 'FDN15' ... 'NCF55' 'NCW30' 'NCW05']
+- Item_Weight has 416 unique value : [ 9.3    5.92  17.5 ... 5.21   5.4 ]
+
+###
 
 ## workflows
 
