@@ -1,6 +1,7 @@
 import pandas as pd
 
-def transform_categorical_numerical(df,id,target):
+def transform_categorical_numerical_old(df,id,target):
+    print("Starting transform from categorical to numerical")
     features=[col for col in df.columns if (col!=target)&(col!=id)]
     print(f"features: {features}")
     for feature in features:
@@ -15,6 +16,7 @@ def transform_categorical_numerical(df,id,target):
             tags = df[feature].unique()
             print(f"After transforming numerical to categorical {feature} has {unique} unique value : {tags}")
         pass
+    print("Ending transform from categorical to numerical")
     return df
 
 ## comments from the professor

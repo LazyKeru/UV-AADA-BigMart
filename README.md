@@ -6,7 +6,7 @@ Prédiction des ventes
 
 (feature categorique et feature numérique)
 
-qu'est ce r2
+qu'est ce r2 + rmse
 
 ## Function :
 
