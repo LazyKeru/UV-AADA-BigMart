@@ -16,6 +16,7 @@ def test_load_data():
 def test_feature_extraction():
     test, train = test_load_data()
     proj.feature_search(train)
+    new=proj.transform_categorical_numerical(train,'Item_Identifier','Item_Outlet_Sales')
     pass
 
 
