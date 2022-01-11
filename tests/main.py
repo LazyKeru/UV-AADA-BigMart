@@ -13,4 +13,10 @@ def test_load_data():
     test = proj.load_data(path_test)
     return test, train
 
-print(test_load_data())
+def test_feature_extraction():
+    test, train = test_load_data()
+    proj.feature_search(train)
+    pass
+
+
+test_feature_extraction()

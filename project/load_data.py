@@ -15,7 +15,7 @@ def load_data(path):
     checking for missing data:\n
     {data.isnull().sum()}\n
     shape:\n
-    {data.shape()}\n\n
+    {data.shape}\n\n
     """
     )
     return data
