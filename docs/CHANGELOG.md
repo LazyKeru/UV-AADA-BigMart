@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/LazyKeru/UV-AADA-BigMart/compare/v1.2.0...v1.2.1) (2022-01-11)
+
+
+### Performance Improvements
+
+* added new reg ([c8070fd](https://github.com/LazyKeru/UV-AADA-BigMart/commit/c8070fd72add4780a07a5a7d95a8e17e9d1cead2))
+
 # [1.2.0](https://github.com/LazyKeru/UV-AADA-BigMart/compare/v1.1.0...v1.2.0) (2022-01-11)
 
 
