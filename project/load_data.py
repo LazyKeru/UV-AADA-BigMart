@@ -14,7 +14,7 @@ def load_data(path_test, path_train):
     info:\n
     {BigMart_test.info()}\n
     checking for missing data:\n
-    {BigMart_test.isnull().sum()}
+    {BigMart_test.isnull().sum()}\n\n
     """
     )
     # A few information of the loaded train data:
@@ -26,7 +26,7 @@ def load_data(path_test, path_train):
     info:\n
     {BigMart_train.info()}\n
     checking for missing data:\n
-    {BigMart_train.isnull().sum()}
+    {BigMart_train.isnull().sum()}\n\n
     """
     )
-    pass
+    return BigMart_test, BigMart_train
