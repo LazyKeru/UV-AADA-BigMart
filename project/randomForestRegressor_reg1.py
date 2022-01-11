@@ -1,5 +1,7 @@
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import r2_score
+from sklearn.metrics import mean_squared_error
 
 def randomForestRegressor_reg1(df,target):
     features=[col for col in df.columns if col!=target]
@@ -11,6 +13,6 @@ def randomForestRegressor_reg1(df,target):
     model = RandomForestRegressor(n_estimators=1000, random_state=0)
     model.fit(X_train, y_train)
     preds = model.predict(X_valid)
-    score = r2_score(y_valid, preds)
-    print('R2:', score)
+    print('R2:', r2_score(y_valid, preds))
+    print('RMSE', mean_squared_error(y_valid, preds))
     pass

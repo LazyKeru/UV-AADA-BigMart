@@ -39,7 +39,8 @@ def test_feature_extraction():
     print(train)
     train = train.drop([identifier], axis=1)
     print(train)
-    proj.regression_selection(train, target)
+    regs = proj.regression_selection(train, target)
+    proj.analyse(regs)
     pass
 
 
