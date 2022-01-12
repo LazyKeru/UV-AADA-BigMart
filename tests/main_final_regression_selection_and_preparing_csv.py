@@ -15,12 +15,6 @@ dataset_test_path = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(_
 target='Item_Outlet_Sales'
 identifier= 'Item_Identifier'
 
-# workflow
-def test_load_data():
-    train = proj.load_data(path_train)
-    test = proj.load_data(path_test)
-    return test, train
-
 def test_feature_extraction():
     train = proj.load_data(path_train)
     test = proj.load_data(path_test)
@@ -31,11 +25,6 @@ def test_feature_extraction():
     print(train)
     test = proj.df_uniform_categorical(test,'Item_Fat_Content',{'low fat':'Low Fat','LF':'Low Fat','reg':'Regular'})
     print(test)
-    ## Local var
-    #print("transform categorical to numercial for train")
-    #train=proj.transform_categorical_numerical(train,'Item_Identifier','Item_Outlet_Sales')
-    #print("transform categorical to numercial for test")
-    #test=proj.transform_categorical_numerical(test,'Item_Identifier','Item_Outlet_Sales')
     categorical_f, numerical_f = proj.split_categorical_numerical(train, target)
     #proj.explore_numerical_features(train, numerical_f, target)
     #proj.explore_categorical_features(train, categorical_f, target)

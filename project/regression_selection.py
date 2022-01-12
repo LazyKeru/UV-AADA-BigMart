@@ -96,15 +96,12 @@ default_parameters = [
 
 def regression_selection(df, target, names=default_names,classifiers=default_classifiers,parameters=default_parameters):
     """
-    Exhaustive search over specified parameters for a large pannel of classifier
-    :param dataframe x_train: the data to train the model
-    :param dataframe x_test: the data to test the model
-    :param dataframe y_train: the labels of the data to train the model
-    :param dataframe y_train: the labels of the data to test the model
-    :param array names: the names of the classifiers
-    :param array classifiers: the function of the classifiers
-    :param array parameters: the parameters of the classifiers
-    :return: it returns the prediction
+    Exhaustive search over specified parameters for a large pannel of regressor
+    :param dataframe df: the data that we will split using train_test_split() for training
+    :param array names: the names of the regressors
+    :param array classifiers: the function of the regressors
+    :param array parameters: the parameters of the regressors
+    :return: it returns the best obtained regressor model
     """
     #splitting data
     features=[col for col in df.columns if col!=target]

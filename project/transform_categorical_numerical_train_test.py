@@ -1,6 +1,14 @@
 import pandas as pd
 
 def transform_categorical_numerical_train_test(df_train, df_test, id, target):
+    """
+    transform the categorical colums to numerical for the df_test and df_train. Could have used LabelEncoder()
+    :param dataframe df_train: dataframe we want to reformat
+    :param dataframe df_test: dataframe we want to reformat
+    :param string id: name of the models identifier target.
+    :param string target: name of the models final target.
+    :return: df_train, df_test transformed dataframes
+    """
     print("Starting transform from categorical to numerical")
     features=[col for col in df_train.columns if (col!=target)&(col!=id)]
     print(f"features: {features}")

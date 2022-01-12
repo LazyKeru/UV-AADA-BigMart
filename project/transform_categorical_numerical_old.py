@@ -1,6 +1,13 @@
 import pandas as pd
 
 def transform_categorical_numerical_old(df,id,target):
+    """
+    transform the categorical colums to numerical. Could have used LabelEncoder()
+    :param df df: dataframe we want to extract the information from
+    :param string target: name of the models identifier target.
+    :param string target: name of the models final target.
+    :return: df transformed dataframe
+    """
     print("Starting transform from categorical to numerical")
     features=[col for col in df.columns if (col!=target)&(col!=id)]
     print(f"features: {features}")
