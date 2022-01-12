@@ -98,7 +98,7 @@ default_parameters = [
 
 def regression_and_features_selection(df, target, names=default_names,classifiers=default_classifiers,parameters=default_parameters):
     """
-    Exhaustive search over specified parameters for a large pannel of regressor
+    Exhaustive search over specified parameters for a large pannel of regressor and selecting features
     :param dataframe df: the data that we will split using train_test_split() for training
     :param array names: the names of the regressors
     :param array classifiers: the function of the regressors
@@ -134,13 +134,13 @@ def regression_and_features_selection(df, target, names=default_names,classifier
         print(f'RMSE for {name}: {np.sqrt((mean_squared_error(y_test, reg.best_estimator_.predict(x_test))))}')
         pass
     """
-    best_r2_score=0
+    best_score=0
     for name, reg in regs.items():
-        if best_r2_score < r2_score(y_test, reg.best_estimator_.predict(x_test)):
-            best_r2_score = r2_score(y_test, reg.best_estimator_.predict(x_test))
-            best_reg = reg.best_estimator_
+        if best_score < score(y_test, reg.score(x_test, y_test)):
+            best_score = score(y_test, reg.score(x_test, y_test))
+            print(f"{name}: {best_score}")
+            best_reg = reg
             pass
         pass
     pass
-    analyse(regs, x_test, y_test)
     return best_reg

@@ -1,36 +1,63 @@
 # UV-AADA-BigMart
 
-(regression)
+Predict the sales
 
-Prédiction des ventes
+# How to test our project ? Either run tests/main_extract.py or tests/main_extract_bis.py
 
-(feature categorique et feature numérique)
+## tests/main_extract.py
 
-qu'est ce r2 + rmse
+We will run ./tests/main_extract.py which will use almost all our modules :
+- load_data (loads a dataset from a csv file inside a dataframe)
+- df_uniform_categorical (Uniforming the tags of a categorical feature colum, as Item_Fat_Content has many tag for one same thing)
+- split_categorical_numerical (Split the categorical and numerical columns names)
+- df_preprocessing_num_features_train_test(preprocessing the num features for df_train, df_test so that the null value take the mean value of the column of the df_train)
+- transform_categorical_numerical_train_test (transform the categorical colums to numerical for the df_test and df_train.
+  using LabelEncoder())
+- regression__selection(Exhaustive search over specified parameters for a large pannel of regressor)
 
-## How to test our project ? Either run tests/main_extract.py or tests/main_extract_bis.py
+The main_explore.py in the tests folder was used to explore the data.
+In the end it will save the best model and the transformed dataset(train and test).
+The train dataset is used to train and test the model.
 
+## tests/main_extract_bis.py
 
+We will run ./tests/main_extract.py which will use almost all our modules, it's our test to select automaticaly our features :
+- load_data
+- df_uniform_categorical
+- split_categorical_numerical
+- df_preprocessing_num_features_train_test
+- transform_categorical_numerical_train_test
+- regression_and_features_selection(Exhaustive search over specified parameters for a large pannel of regressor and selecting features)
 
+### install dependencies
 
-## Functions :
+#### if you are using python2
 
-### load_data
+``` bash
+$ pip install -r requirements.txt
+```
 
+#### if you are using python3
 
-#### observation
-- Test
-  - Size: (5681 rows * 11 columns)
-  - Has missing data (976 for Item_weight, 1606 for Outlet_Size)
-- Train
-  - Size: (8523 rows * 12 columns)
-  - Has missing data (1463 for Item_weight, 2410 for Outlet_Size)
+``` bash
+$ pip3 install -r requirements.txt
+```
 
-### feature_search
+### run our main test function
 
-###
+#### if you are using python2
 
-### regression_selection obtained results
+``` bash
+$ python main_name.py
+```
+
+#### if you are using python3
+
+``` bash
+$ python3 main_name.py
+```
+
+#### GridSearchCV result:
 
 ```
 Best params for each regressor
@@ -90,6 +117,11 @@ best_score_ for Ridge regressor
 R2 for Ridge best_score_ regressor: 0.5104172373734344
 RMSE for Ridge best_score_ regressor: 1193.3762046108932
 ```
+
+
+
+## workflows
+
 
 ## workflows
 

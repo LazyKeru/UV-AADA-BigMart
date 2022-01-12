@@ -1,7 +1,8 @@
 # There are null values in two columns Item_Weight and Outlet_Size
 def df_preprocessing_num_features_train_test(df_train, df_test, num_features):
     """
-    preprocessing the num features so that the null value take the mean value of the column of the df_train
+    preprocessing the num features for df_train, df_test
+    so that the null value take the mean value of the column of the df_train
     :param dataframe df_train: dataframe we want to reformat
     :param dataframe df_test: dataframe we want to reformat
     :param array num_features: name of the features we want to preprocess
