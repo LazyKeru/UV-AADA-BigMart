@@ -1,3 +1,16 @@
+# [1.4.0](https://github.com/LazyKeru/UV-AADA-BigMart/compare/v1.3.0...v1.4.0) (2022-01-12)
+
+
+### Features
+
+* added regression and feature selection module ([a1abe2e](https://github.com/LazyKeru/UV-AADA-BigMart/commit/a1abe2eae459e69d6e2a8a236ba03a38619f66af))
+
+
+### Performance Improvements
+
+* changed the description for each modules and cleaning the test section ([2e11660](https://github.com/LazyKeru/UV-AADA-BigMart/commit/2e11660ad661466a5a6688048138b44827d26d36))
+* optimized the transform_categorical_numerical_train_test module ([34774ef](https://github.com/LazyKeru/UV-AADA-BigMart/commit/34774ef76d2568edd99fcf1230b6cc1bb067882c))
+
 # [1.3.0](https://github.com/LazyKeru/UV-AADA-BigMart/compare/v1.2.1...v1.3.0) (2022-01-11)
 
 
