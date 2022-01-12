@@ -8,32 +8,31 @@ Prédiction des ventes
 
 qu'est ce r2 + rmse
 
-## Function :
+## How to test our project ? Either run tests/main_extract.py or tests/main_extract_bis.py
 
-### load_data observation
 
-#### Test
 
-Size: (5681 rows * 11 columns)
-Has missing data (976 for Item_weight, 1606 for Outlet_Size)
 
-#### Train
+## Functions :
 
-Size: (8523 rows * 12 columns)
-Has missing data (1463 for Item_weight, 2410 for Outlet_Size)
+### load_data
 
-### feature_search observation
 
-#### Test
+#### observation
+- Test
+  - Size: (5681 rows * 11 columns)
+  - Has missing data (976 for Item_weight, 1606 for Outlet_Size)
+- Train
+  - Size: (8523 rows * 12 columns)
+  - Has missing data (1463 for Item_weight, 2410 for Outlet_Size)
 
-#### Train
-- Item_Identifier has 1559 unique value : ['FDA15' 'DRC01' 'FDN15' ... 'NCF55' 'NCW30' 'NCW05']
-- Item_Weight has 416 unique value : [ 9.3    5.92  17.5 ... 5.21   5.4 ]
+### feature_search
 
 ###
 
 ### regression_selection obtained results
 
+```
 Best params for each regressor
 
 best_params_ for KNeighborsRegressor regressor
@@ -90,6 +89,7 @@ best_score_ for Ridge regressor
 0.5054256927204294
 R2 for Ridge best_score_ regressor: 0.5104172373734344
 RMSE for Ridge best_score_ regressor: 1193.3762046108932
+```
 
 ## workflows
 

@@ -8,9 +8,9 @@ from joblib import dump
 
 path_test = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),'dataset/Test.csv'))
 path_train = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),'dataset/Train.csv'))
-model_path = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),'tests/models/model_main_extract.pkl'))
-dataset_train_path = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),'tests/treated_dataset/train_main_extract.cvs'))
-dataset_test_path = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),'tests/treated_dataset/test_main_extract.cvs'))
+model_path = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),'tests/models/model_main_extract_bis.pkl'))
+dataset_train_path = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),'tests/treated_dataset/train_main_extract_bis.cvs'))
+dataset_test_path = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),'tests/treated_dataset/test_main_extract_bis.cvs'))
 
 target='Item_Outlet_Sales'
 identifier= 'Item_Identifier'
@@ -34,7 +34,7 @@ def test_feature_extraction():
     test = test.drop([identifier], axis=1)
     print("ran drop identifier as we already have an index")
 
-    reg = proj.regression_selection(train, target)
+    reg = proj.regression_and_features_selection(train, target)
     train.to_csv(dataset_train_path)
     test.to_csv(dataset_test_path)
     dump(reg, model_path)
