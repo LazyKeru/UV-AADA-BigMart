@@ -136,8 +136,8 @@ def regression_and_features_selection(df, target, names=default_names,classifier
     """
     best_score=0
     for name, reg in regs.items():
-        if best_score < score(y_test, reg.score(x_test, y_test)):
-            best_score = score(y_test, reg.score(x_test, y_test))
+        if best_score < reg.score(x_test, y_test):
+            best_score = reg.score(x_test, y_test)
             print(f"{name}: {best_score}")
             best_reg = reg
             pass

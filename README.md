@@ -117,6 +117,28 @@ best_score_ for Ridge regressor
 R2 for Ridge best_score_ regressor: 0.5104172373734344
 RMSE for Ridge best_score_ regressor: 1193.3762046108932
 ```
+#### Conclusion:
+
+In order to find the best results, we used GridSearchCV to test a large number of regression models: (KNeighborsRegressor, RandomForestRegressor, CatBoostRegressor, GradientBoostingRegressor, DecisionTreeRegressor, XGBRegressor, LinearRegression, Ridge).
+
+We found that the best regressor is CatBoostRegressor. Since its best iteration had the highest r2 and the lowest RMSE.
+
+```
+Results for CatBoostRegressor:
+Best parameters used : {'depth': 3, 'iterations': 100, 'learning_rate': 0.1, 'loss_function': 'RMSE'}
+Best R2 : 0.6121388256861613
+Best RMSE : 1062.1906364309425
+```
+
+We haven't analysed the features that much, and we have't proceeded to a feature elimination. Eliminating certain features enables the machine learning algorithm to train faster, while reducing the complexity of a model and makes it easier to interpret. It also improves the accuracy of a model if the right subset is chosen. We could also avoid overfitting
+
+With our main_explore.py function we can see in one of our graph that there is a relationship between the price(Item_MRP) and sales(Item_Outlet_Sales)
+
+![Alt text](docs\img\aichatoutoure-img1.png?raw=true "Title")
+
+the scatterplot below suggests that the price'Item_MRP' and the 'Item_Outlet_Sales' are strong correlated.
+
+![Alt text](docs\img\aichatoutoure-img2.png?raw=true "Title")
 
 
 
