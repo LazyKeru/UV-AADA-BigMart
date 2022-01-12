@@ -22,7 +22,7 @@ default_names = [
     #"LogisticRegression", # Neural network models
     #"KNeighborsRegressor",
     "RandomForestRegressor",
-    "CatBoostRegressor",
+    #"CatBoostRegressor",
     "GradientBoostingRegressor",
     "DecisionTreeRegressor",
     "XGBRegressor",
@@ -34,7 +34,7 @@ default_classifiers = [
     #LogisticRegression(),
     #KNeighborsRegressor(),
     RandomForestRegressor(),
-    CatBoostRegressor(),
+    #CatBoostRegressor(),
     GradientBoostingRegressor(),
     DecisionTreeRegressor(),
     XGBRegressor(),
@@ -63,13 +63,13 @@ default_parameters = [
         'random_state': [0]
         # Many more config : https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
     },
-    {
-        'iterations': [50, 100, 150, 200, 300],
-        'depth': [3],
-        'learning_rate': [0.1],
-        'loss_function': ['RMSE']
-        # Many more config : https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
-    },
+    #{
+    #    'iterations': [50, 100, 150, 200, 300],
+    #    'depth': [3],
+    #    'learning_rate': [0.1],
+    #    'loss_function': ['RMSE']
+    #    # Many more config : https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
+    #},
     {
         'learning_rate': [0.01,0.02,0.03,0.04],
         'subsample'    : [0.9, 0.5, 0.2, 0.1],

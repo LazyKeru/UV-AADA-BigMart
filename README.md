@@ -134,11 +134,16 @@ We haven't analysed the features that much, and we have't proceeded to a feature
 
 With our main_explore.py function we can see in one of our graph that there is a relationship between the price(Item_MRP) and sales(Item_Outlet_Sales)
 
-![Alt text](docs\img\aichatoutoure-img1.png?raw=true "Title")
+![img](docs/img/aichatoutoure-img1.png")
 
-the scatterplot below suggests that the price'Item_MRP' and the 'Item_Outlet_Sales' are strong correlated.
+The scatterplot below also suggests that the price 'Item_MRP' and the 'Item_Outlet_Sales' are strongly correlated. We can conclude that Item_Outlet_Sales would be a good feature too keep
 
-![Alt text](docs\img\aichatoutoure-img2.png?raw=true "Title")
+![img](docs/img/aichatoutoure-img2.png)
+
+The bar below shows a big difference between the "Item_Outlet_Sales" between the different "Outlet_type".n We can also conclude that "Outlet_type" would be a good feature too keep.
+
+![img](docs/img/aichatoutoure-img3.png)
+
 
 
 
