@@ -57,7 +57,7 @@ $ python main_name.py
 $ python3 main_name.py
 ```
 
-#### GridSearchCV result:
+#### GridSearchCV result for main_extract:
 
 ```
 Best params for each regressor
@@ -130,6 +130,14 @@ Best R2 : 0.6121388256861613
 Best RMSE : 1062.1906364309425
 ```
 
+With main_extract_bis we didn't take enough time to tweak it, and only obtained the scores
+
+```
+RandomForestRegressor: 0.59966836436923
+GradientBoostingRegressor: 0.6060770903781255
+XGBRegressor: 0.6077281080442473
+```
+
 We haven't analysed the features that much, and we have't proceeded to a feature elimination. Eliminating certain features enables the machine learning algorithm to train faster, while reducing the complexity of a model and makes it easier to interpret. It also improves the accuracy of a model if the right subset is chosen. We could also avoid overfitting
 
 With our main_explore.py function we can see in one of our graph that there is a relationship between the price(Item_MRP) and sales(Item_Outlet_Sales)
@@ -143,6 +151,45 @@ The scatterplot below also suggests that the price 'Item_MRP' and the 'Item_Outl
 The bar below shows a big difference between the "Item_Outlet_Sales" between the different "Outlet_type".n We can also conclude that "Outlet_type" would be a good feature too keep.
 
 ![img](docs/img/aichatoutoure-img3.png)
+
+# Predicting the Item_Outlet_Sales from treated test dataset:
+
+## Using tests/main_.py
+
+### install dependencies
+
+#### if you are using python2
+
+``` bash
+$ pip install -r requirements.txt
+```
+
+#### if you are using python3
+
+``` bash
+$ pip3 install -r requirements.txt
+```
+
+### run our main test function
+
+#### if you are using python2
+
+``` bash
+$ python main_.py
+```
+
+#### if you are using python3
+
+``` bash
+$ python3 main_.py
+```
+
+### Results:
+
+```
+[1734.87853431 1352.48154455  696.46521969 ... 1818.59764884 3551.4866275
+ 1161.2948966 ]
+```
 
 
 
