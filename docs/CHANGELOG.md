@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/LazyKeru/UV-AADA-BigMart/compare/v1.4.0...v1.5.0) (2022-01-12)
+
+
+### Features
+
+* project should be ready to hand in ([208b9c6](https://github.com/LazyKeru/UV-AADA-BigMart/commit/208b9c627020d874bf7a43b91f4f102523cc684e))
+
 # [1.4.0](https://github.com/LazyKeru/UV-AADA-BigMart/compare/v1.3.0...v1.4.0) (2022-01-12)
 
 
