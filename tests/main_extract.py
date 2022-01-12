@@ -8,9 +8,9 @@ from joblib import dump
 
 path_test = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),'dataset/Test.csv'))
 path_train = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),'dataset/Train.csv'))
-model_path = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),'tests/models/model_bis.pkl'))
-dataset_train_path = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),'tests/treated_dataset/train_bis.cvs'))
-dataset_test_path = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),'tests/treated_dataset/test_bis.cvs'))
+model_path = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),'tests/models/model.pkl'))
+dataset_train_path = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),'tests/treated_dataset/train.cvs'))
+dataset_test_path = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')),'tests/treated_dataset/test.cvs'))
 
 target='Item_Outlet_Sales'
 identifier= 'Item_Identifier'
@@ -18,23 +18,17 @@ identifier= 'Item_Identifier'
 def test_feature_extraction():
     train = proj.load_data(path_train)
     test = proj.load_data(path_test)
-    print("feature search for train")
-    proj.feature_search(train)
-    # 'Item_Fat_Content' has multiple tags for the same category
     train = proj.df_uniform_categorical(train,'Item_Fat_Content',{'low fat':'Low Fat','LF':'Low Fat','reg':'Regular'})
     print(train)
     test = proj.df_uniform_categorical(test,'Item_Fat_Content',{'low fat':'Low Fat','LF':'Low Fat','reg':'Regular'})
     print(test)
     categorical_f, numerical_f = proj.split_categorical_numerical(train, target)
-    #proj.explore_numerical_features(train, numerical_f, target)
-    #proj.explore_categorical_features(train, categorical_f, target)
-    train, test = proj.transform_categorical_numerical_train_test(train, test, target, identifier)
-    print("ran transform_categorical_numerical_train_test")
+    train, test = proj.df_preprocessing_num_features_train_test(train, test, numerical_f)
+    print("ran df_preprocessing_num_features_train_test")
     print(train)
     print(test)
-    categorical_f, numerical_f = proj.split_categorical_numerical(train, target)
-    train, test = proj.df_preprocessing_num_features_train_test(train, test, numerical_f+categorical_f)
-    print("ran df_preprocessing_num_features_train_test")
+    train, test = proj.transform_categorical_numerical_train_test(train, test, target, identifier)
+    print("ran transform_categorical_numerical_train_test")
     print(train)
     print(test)
     train = train.drop([identifier], axis=1)

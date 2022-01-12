@@ -1,4 +1,4 @@
-# tests/load_data
+# tests/main_randomForstRegressor
 
 import sys
 import os
@@ -11,7 +11,7 @@ path_train = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__
 target='Item_Outlet_Sales'
 identifier= 'Item_Identifier'
 
-def test_feature_extraction():
+def main_randomForstRegressor():
     train = proj.load_data(path_train)
     # 'Item_Fat_Content' has multiple tags for the same category
     train = proj.df_uniform_categorical(train,'Item_Fat_Content',{'low fat':'Low Fat','LF':'Low Fat','reg':'Regular'})
@@ -27,4 +27,4 @@ def test_feature_extraction():
     pass
 
 
-test_feature_extraction()
+main_randomForstRegressor()

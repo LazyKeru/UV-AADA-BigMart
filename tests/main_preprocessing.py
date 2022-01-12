@@ -15,47 +15,56 @@ dataset_test_path = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(_
 target='Item_Outlet_Sales'
 identifier= 'Item_Identifier'
 
-# workflow
-def test_load_data():
-    train = proj.load_data(path_train)
-    test = proj.load_data(path_test)
-    return test, train
-
 def test_feature_extraction():
     train = proj.load_data(path_train)
     test = proj.load_data(path_test)
-    print("feature search for train")
-    proj.feature_search(train)
-    # 'Item_Fat_Content' has multiple tags for the same category
+
+    print("Uniforming Item_Fat_Content")
     train = proj.df_uniform_categorical(train,'Item_Fat_Content',{'low fat':'Low Fat','LF':'Low Fat','reg':'Regular'})
-    print(train)
     test = proj.df_uniform_categorical(test,'Item_Fat_Content',{'low fat':'Low Fat','LF':'Low Fat','reg':'Regular'})
-    print(test)
-    ## Local var
-    #print("transform categorical to numercial for train")
-    #train=proj.transform_categorical_numerical(train,'Item_Identifier','Item_Outlet_Sales')
-    #print("transform categorical to numercial for test")
-    #test=proj.transform_categorical_numerical(test,'Item_Identifier','Item_Outlet_Sales')
+    print("ran df_uniform_categorical")
+    print(f"""
+    feature search train:\n
+    {proj.feature_search(train)}\n
+    feature search test:\n
+    {proj.feature_search(test)}
+    """)
+
+    # simple split
     categorical_f, numerical_f = proj.split_categorical_numerical(train, target)
-    #proj.explore_numerical_features(train, numerical_f, target)
-    #proj.explore_categorical_features(train, categorical_f, target)
+    #simple split
+
+    print("preprocessing num features")
     train, test = proj.df_preprocessing_num_features_train_test(train, test, numerical_f)
     print("ran df_preprocessing_num_features_train_test")
-    print(train)
-    print(test)
+    print(f"""
+    feature search train:\n
+    {proj.feature_search(train)}\n
+    feature search test:\n
+    {proj.feature_search(test)}
+    """)
+
+    print("transforming categorical to  numerical features")
     train, test = proj.transform_categorical_numerical_train_test(train, test, target, identifier)
     print("ran transform_categorical_numerical_train_test")
-    print(train)
-    print(test)
+    print(f"""
+    feature search train:\n
+    {proj.feature_search(train)}\n
+    feature search test:\n
+    {proj.feature_search(test)}
+    """)
+    print("done")
+
+
+
+    print("Running drop for the identifier as we already have an index")
     train = train.drop([identifier], axis=1)
     test = test.drop([identifier], axis=1)
-    print("ran drop identifier as we already have an index")
-    print(train)
-    print(test)
-    reg = proj.regression_selection(train, target)
-    train.to_csv(dataset_train_path)
-    test.to_csv(dataset_test_path)
-    dump(reg, model_path)
+    print("feature search train:")
+    print(proj.feature_search(train))
+    print("feature search test:")
+    print(proj.feature_search(test))
+    print("done")
     pass
 
 

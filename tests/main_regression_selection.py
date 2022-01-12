@@ -1,4 +1,4 @@
-# tests/main_analyse
+# tests/main_regression_selection
 
 import sys
 import os
@@ -11,16 +11,19 @@ path_train = (os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__
 target='Item_Outlet_Sales'
 identifier= 'Item_Identifier'
 
-def main_analyse():
-    # We will only analyse the train dataset, as we will train our model with that csv
+def main_regression_selection():
     train = proj.load_data(path_train)
-    print("feature search for train")
-    proj.feature_search(train)
-    # we saw that 'Item_Fat_Content' has multiple tags for the same description
     train = proj.df_uniform_categorical(train,'Item_Fat_Content',{'low fat':'Low Fat','LF':'Low Fat','reg':'Regular'})
-    print(f"train new dataframe :\n{train}")
+    print(train)
     categorical_f, numerical_f = proj.split_categorical_numerical(train, target)
-    # Will explore the numerical features
-    proj.explore_numerical_features(train, numerical_f, target)
-    # Will explore the categorical features
-    proj.explore_categorical_features(train, categorical_f, target)
+    train = proj.df_preprocessing_num_features(train, numerical_f)
+    print(train)
+    train = proj.transform_categorical_numerical_old(train, target, identifier)
+    print(train)
+    train = train.drop([identifier], axis=1)
+    print(train)
+    proj.regression_selection(train, target)
+    pass
+
+
+main_regression_selection()
