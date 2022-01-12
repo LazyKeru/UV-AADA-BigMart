@@ -1,6 +1,7 @@
 # classifier_parameters_selection
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import r2_score
 # to add more parameters to the default classifier
 import numpy as np
 # classifiers, remove if your remove default
@@ -130,14 +131,14 @@ def regression_selection(df, target, names=default_names,classifiers=default_cla
         print(f'R2 for {name}: {r2_score(y_test, reg.best_estimator_.predict(x_test))}')
         print(f'RMSE for {name}: {np.sqrt((mean_squared_error(y_test, reg.best_estimator_.predict(x_test))))}')
         pass
-    best_score=0
+    """
+    best_r2_score=0
     for name, reg in regs.items():
-        if best_score < reg.best_score_:
-            best_score = reg.best_score_
+        if best_r2_score < r2_score(y_test, reg.best_estimator_.predict(x_test)):
+            best_r2_score = r2_score(y_test, reg.best_estimator_.predict(x_test))
             best_reg = reg.best_estimator_
             pass
         pass
     pass
-    """
     analyse(regs, x_test, y_test)
-    return regs
+    return best_reg

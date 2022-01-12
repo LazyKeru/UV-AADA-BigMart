@@ -8,6 +8,12 @@
 #the function which get the columns which contains the null values
 # credit: https://www.kaggle.com/aichatoutoure/bigmart-sales-predictions
 def get_null_cols(X,cols):
+    """
+    Prints information about the percentage of nulls
+    :param DataFrame X: dataframe we want to get information about the percentage of nulls
+    :param array cols: string of all the columns name
+    :return:
+    """
     null_cols=list(X[cols].isnull().sum()[X[cols].isnull().sum()>0].index)
     print("columns which contains null",null_cols)
     for col in null_cols :
@@ -15,6 +21,11 @@ def get_null_cols(X,cols):
         print("We have ",round(percent,2)," % to nulls values for ",col,"column")
 
 def feature_search(df):
+    """
+    Describes the dataframe.
+    :param DataFrame df: dataframe of the csv file
+    :return:
+    """
     for column in df.columns:
         print(f"{column} has {len(df[column].unique())} unique value : {df[column].unique()}")
         pass
